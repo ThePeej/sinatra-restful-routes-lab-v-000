@@ -5,6 +5,7 @@ class ApplicationController < Sinatra::Base
   end
   get '/' do
     "<h1>Sintra RESTful Routes Lab</h1>"
+    "<h3>Navigate to '/recipes' to get started"
   end
 
   get '/recipes' do
