@@ -7,11 +7,13 @@ class ApplicationController < Sinatra::Base
     "<h1>Sintra RESTful Routes Lab</h1>"
   end
 
+  #Index Route
   get '/recipes' do
     @recipes = Recipe.all
     erb :index
   end
 
+    # New Routes
   get '/recipes/new' do
     erb :new
   end
@@ -21,11 +23,13 @@ class ApplicationController < Sinatra::Base
     redirect "/recipes/#{@recipe.id}"
   end
 
+  # Show Route
   get '/recipes/:id' do
     @recipe = Recipe.find(params[:id])
     erb :show
   end
 
+  # Edit Routes
   get '/recipes/:id/edit' do
     @recipe = Recipe.find(params[:id])
     erb :edit
@@ -36,6 +40,13 @@ class ApplicationController < Sinatra::Base
     @recipe.name = params[:name]
     @recipe.ingredients = params[:ingredients]
     @recipe.cook_time = params[:cook_time]
+    redirect "recipes/#{@recipe.id}"
+  end
+
+  delete 'recipes/:id' do
+    @recipe = Recipe.find(params[:id])
+    @recipe.delete
+
   end
 
 end
