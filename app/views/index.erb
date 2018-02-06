@@ -3,7 +3,7 @@
 <% @recipes.each do |recipe| %>
 <div>
 <br>
-<a href="/recipe/<%=@recipe.id%>"<h2><%= recipe.name %></h2></a>
+<a href="/recipe/<%= recipe.id %>"<h2><%= recipe.name %></h2></a>
 <h3><%= recipe.cook_time %></h3>
 <h4><%= recipe.ingredients %></h4>
 <br>
