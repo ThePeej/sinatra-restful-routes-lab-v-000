@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
   get '/' do
-    "Sintra RESTful Routes Lab"
+    "<h1>Sintra RESTful Routes Lab</h1>"
   end
 
   get '/recipes' do
