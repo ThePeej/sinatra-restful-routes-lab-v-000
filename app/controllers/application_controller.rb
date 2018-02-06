@@ -4,14 +4,16 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
   get '/' do
-    erb :index
+    "Sintra RESTful Routes Lab"
   end
 
-  get '/' do
+  get '/recipes' do
+    @recipes
     erb :index
   end
 
   get '/recipes/new' do
+    @recipes = Recipe.all
     erb :new
   end
 
